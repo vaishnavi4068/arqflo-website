@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 15% 5%;
+    --foreground: 210 20% 93%;
+    --card: 220 15% 8%;
+    --card-foreground: 210 20% 93%;
+    --popover: 220 15% 8%;
+    --popover-foreground: 210 20% 93%;
+    --primary: 210 20% 93%;
+    --primary-foreground: 220 15% 5%;
+    --secondary: 220 12% 14%;
+    --secondary-foreground: 210 20% 93%;
+    --muted: 220 12% 14%;
+    --muted-foreground: 215 12% 55%;
+    --accent: 220 12% 18%;
+    --accent-foreground: 210 20% 93%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 12% 16%;
+    --input: 220 12% 16%;
+    --ring: 215 12% 55%;
+    --chart-1: 210 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 340 75% 55%;
+    --chart-5: 142 71% 45%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.08];
+  }
+  .glass-hover {
+    @apply hover:bg-white/[0.07] hover:border-white/[0.12] transition-all duration-300;
+  }
+  .glow-sm {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.03);
+  }
+  .glow-green {
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.2);
+  }
+  .glow-red {
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.2);
+  }
+  .glow-yellow {
+    box-shadow: 0 0 12px rgba(234, 179, 8, 0.2);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full;
+  }
+}
+
+/* Google Places Autocomplete dropdown — force dark theme + high z-index
+   so it shows above dialogs/sheets. */
+.pac-container {
+  z-index: 10000 !important;
+  background: hsl(220 15% 8%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  font-family: inherit !important;
+  margin-top: 4px !important;
+  overflow: hidden;
+}
+.pac-item {
+  padding: 8px 12px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 13px !important;
+  cursor: pointer;
+}
+.pac-item:first-child {
+  border-top: none !important;
+}
+.pac-item:hover,
+.pac-item-selected {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+.pac-item-query {
+  color: rgb(103, 232, 249) !important;
+  font-size: 13px !important;
+}
+.pac-matched {
+  color: rgb(103, 232, 249) !important;
+  font-weight: 600;
+}
+.pac-icon {
+  filter: invert(1) opacity(0.5);
+}
+
