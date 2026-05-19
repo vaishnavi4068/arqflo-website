@@ -26,7 +26,7 @@ const PHASES = [
     step: "03",
     icon: ShieldCheck,
     title: "Code Compliance",
-    body: "IBC occupancy, construction type feasibility, height-area allowances, and special-use triggers — with rule-card-level reasoning.",
+    body: "IBC occupancy, construction type feasibility, height-area allowances, and special-use triggers, with rule-card-level reasoning.",
   },
   {
     step: "04",
@@ -44,7 +44,7 @@ const PHASES = [
 
 export function HowItWorks() {
   return (
-    <section className="relative border-t border-white/[0.05] bg-[hsl(220_15%_4%)] py-24">
+    <section id="how-it-works" className="relative border-t border-white/[0.05] bg-[hsl(220_15%_4%)] py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14 max-w-2xl">
           <div className="mb-2 text-[11px] font-medium uppercase tracking-[0.2em] text-cyan-300/75">

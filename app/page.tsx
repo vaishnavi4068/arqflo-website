@@ -1,9 +1,13 @@
 import { MarketingHeader } from "@/components/landing/MarketingHeader";
 import { HeroSection } from "@/components/landing/HeroSection";
+import { TheProblem } from "@/components/landing/TheProblem";
+import { RootCause } from "@/components/landing/RootCause";
+import { TheSolution } from "@/components/landing/TheSolution";
+import { IntelligencePillars } from "@/components/landing/IntelligencePillars";
 import { HowItWorks } from "@/components/landing/HowItWorks";
-import { AgentsShowcase } from "@/components/landing/AgentsShowcase";
 import { CitiesCoverage } from "@/components/landing/CitiesCoverage";
-import { PricingTeaser } from "@/components/landing/PricingTeaser";
+import { WhyArqFlo } from "@/components/landing/WhyArqFlo";
+import { Roadmap } from "@/components/landing/Roadmap";
 import { Footer } from "@/components/landing/Footer";
 
 export default function LandingPage() {
@@ -12,12 +16,16 @@ export default function LandingPage() {
       <MarketingHeader />
       <main>
         <HeroSection />
+        <TheProblem />
+        <RootCause />
+        <TheSolution />
+        <IntelligencePillars />
         <HowItWorks />
-        <AgentsShowcase />
         <CitiesCoverage />
-        <PricingTeaser />
-        <Footer />
+        <WhyArqFlo />
+        <Roadmap />
       </main>
+      <Footer />
     </div>
   );
 }

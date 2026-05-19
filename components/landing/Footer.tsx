@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Building2 } from "lucide-react";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "";
+
 export function Footer() {
   return (
     <footer className="relative border-t border-white/[0.05] bg-[hsl(220_15%_3.5%)] py-12">
@@ -12,19 +14,25 @@ export function Footer() {
               ArqFlo
             </span>
             <span className="ml-2 text-[11.5px] text-white/35">
-              Agentic preconstruction platform
+              Decision Intelligence for the Built World
             </span>
           </div>
 
           <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[12.5px] text-white/55">
-            <Link href="/signin" className="hover:text-white/85">
+            <a href="#how-it-works" className="hover:text-white/85">
+              How it works
+            </a>
+            <a href="#pillars" className="hover:text-white/85">
+              Pillars
+            </a>
+            <a href="#coverage" className="hover:text-white/85">
+              Coverage
+            </a>
+            <a href="#roadmap" className="hover:text-white/85">
+              Roadmap
+            </a>
+            <Link href={`${APP_URL}/signin`} className="hover:text-white/85">
               Sign in
-            </Link>
-            <Link href="/signup" className="hover:text-white/85">
-              Sign up
-            </Link>
-            <Link href="/signin" className="hover:text-white/85">
-              Live demo
             </Link>
             <span className="text-white/15">·</span>
             <span className="text-white/35">
