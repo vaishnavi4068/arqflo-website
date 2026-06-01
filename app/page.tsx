@@ -1,5 +1,6 @@
 import { MarketingHeader } from "@/components/landing/MarketingHeader";
 import { HeroSection } from "@/components/landing/HeroSection";
+import { PlatformVideo } from "@/components/landing/PlatformVideo";
 import { TheProblem } from "@/components/landing/TheProblem";
 import { RootCause } from "@/components/landing/RootCause";
 import { TheSolution } from "@/components/landing/TheSolution";
@@ -16,6 +17,7 @@ export default function LandingPage() {
       <MarketingHeader />
       <main>
         <HeroSection />
+        <PlatformVideo />
         <TheProblem />
         <RootCause />
         <TheSolution />
