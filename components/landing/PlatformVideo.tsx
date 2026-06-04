@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 
 export function PlatformVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -26,6 +26,12 @@ export function PlatformVideo() {
     if (!v) return;
     v.muted = !v.muted;
     setMuted(v.muted);
+  }
+
+  function enterFullscreen() {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.requestFullscreen) v.requestFullscreen();
   }
 
   return (
@@ -104,17 +110,26 @@ export function PlatformVideo() {
                 {playing ? "Pause" : "Play"}
               </button>
 
-              <button
-                onClick={toggleMute}
-                className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-[12px] font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-              >
-                {muted ? (
-                  <VolumeX className="h-3.5 w-3.5" />
-                ) : (
-                  <Volume2 className="h-3.5 w-3.5" />
-                )}
-                {muted ? "Unmute" : "Mute"}
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={toggleMute}
+                  className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-[12px] font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+                >
+                  {muted ? (
+                    <VolumeX className="h-3.5 w-3.5" />
+                  ) : (
+                    <Volume2 className="h-3.5 w-3.5" />
+                  )}
+                  {muted ? "Unmute" : "Mute"}
+                </button>
+                <button
+                  onClick={enterFullscreen}
+                  className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-[12px] font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+                >
+                  <Maximize className="h-3.5 w-3.5" />
+                  Fullscreen
+                </button>
+              </div>
             </div>
           </div>
         </motion.div>

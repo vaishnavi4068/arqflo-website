@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { RequestPreview } from "@/components/landing/RequestPreview";
 
@@ -28,47 +27,49 @@ export function MarketingHeader() {
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-colors duration-200",
-          scrolled
-            ? "border-b border-white/[0.06] bg-[hsl(220_15%_5%)]/80 backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
-        )}
-      >
-        <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-8" style={{ height: "72px" }}>
+      <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-5 pt-5">
+        <div
+          className={cn(
+            "flex w-full max-w-5xl items-center justify-between rounded-full px-6 py-4 transition-all duration-300",
+            scrolled
+              ? "border border-white/[0.12] bg-[hsl(220_20%_10%)]/95 shadow-[0_8px_40px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-2xl"
+              : "border border-white/[0.10] bg-[hsl(220_20%_9%)]/85 shadow-[0_4px_30px_rgba(0,0,0,0.35),0_0_0_1px_rgba(255,255,255,0.03)] backdrop-blur-xl"
+          )}
+        >
+          {/* Logo */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2.5 text-white/90 transition-opacity hover:opacity-85"
+            className="inline-flex items-center text-white transition-opacity hover:opacity-80"
           >
-            <Building2 className="h-5 w-5 text-cyan-300/80" />
-            <span className="text-[15px] font-semibold uppercase tracking-[0.22em]">
+            <span className="text-[16px] font-bold uppercase tracking-[0.28em] text-white">
               ArqFlo
             </span>
           </Link>
 
+          {/* Nav */}
           <nav className="hidden items-center gap-1 md:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-[13.5px] font-medium text-white/60 transition-colors hover:bg-white/[0.04] hover:text-white"
+                className="rounded-full px-4 py-2 text-[14px] font-medium text-white/60 transition-colors hover:bg-white/[0.06] hover:text-white"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          {/* CTAs */}
+          <div className="flex items-center gap-2.5">
             <Link
               href={`${APP_URL}/signin`}
-              className="rounded-full px-4 py-2 text-[13.5px] font-medium text-white/70 transition-colors hover:bg-white/[0.04] hover:text-white"
+              className="rounded-full px-4 py-2 text-[14px] font-medium text-white/65 transition-colors hover:bg-white/[0.06] hover:text-white"
             >
               Sign in
             </Link>
             <button
               onClick={() => setPreviewOpen(true)}
-              className="inline-flex items-center rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-[13.5px] font-medium text-cyan-100 transition-colors hover:bg-cyan-300/15"
+              className="inline-flex items-center rounded-full border border-cyan-400/35 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 px-5 py-2 text-[14px] font-semibold text-cyan-100 shadow-[0_0_24px_rgba(34,211,238,0.2)] transition-all hover:from-cyan-500/30 hover:to-teal-500/30 hover:shadow-[0_0_32px_rgba(34,211,238,0.3)]"
             >
               Request preview
             </button>

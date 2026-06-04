@@ -10,7 +10,7 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative overflow-hidden pt-36 pb-28 sm:pt-44 sm:pb-36">
+      <section className="relative overflow-hidden pt-32 pb-28 sm:pt-40 sm:pb-36">
         {/* Background glows */}
         <div
           aria-hidden
