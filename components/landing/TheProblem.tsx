@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const STATS = [
-  { value: "30%", label: "of construction costs are waste from rework" },
-  { value: "80%", label: "of rework originates in the preconstruction phase" },
-  { value: "6–12 wks", label: "average time to validate a single site" },
+  { value: "30%", label: "of construction costs lost to rework from coordination failures" },
+  { value: "80%", label: "of clashes between structural and MEP systems go undetected before site" },
+  { value: "6–12 wks", label: "typical delay when structural and MEP scopes aren't aligned at design stage" },
 ];
 
 export function TheProblem() {
@@ -31,14 +31,10 @@ export function TheProblem() {
             The problem
           </p>
           <h2 className="max-w-3xl text-balance text-[32px] font-semibold leading-[1.1] tracking-tight text-white sm:text-[42px]">
-            Preconstruction decisions are made on incomplete information, and
-            the industry pays for it.
+            Structural and MEP decisions are made in silos, and projects pay the price downstream.
           </h2>
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/55 sm:text-[16px]">
-            Architects, developers, and GCs spend weeks gathering data that
-            should take hours. Zoning codes, permit history, site constraints,
-            and code compliance are spread across dozens of siloed sources,
-            none of which talk to each other.
+            Architects, structural engineers, and MEP consultants work from disconnected data sets. Load paths, system routes, and code constraints are never reconciled until construction — when changes cost ten times more to fix.
           </p>
         </motion.div>
 

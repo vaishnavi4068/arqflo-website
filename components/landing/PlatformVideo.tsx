@@ -6,8 +6,8 @@ import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 
 export function PlatformVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
-  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(false);
 
   function togglePlay() {
     const v = videoRef.current;
@@ -88,13 +88,23 @@ export function PlatformVideo() {
               ref={videoRef}
               src="/media/platform-demo.mp4"
               className="h-full w-full object-cover"
-              autoPlay
-              muted
               playsInline
-              loop
               onPlay={() => setPlaying(true)}
               onPause={() => setPlaying(false)}
             />
+
+            {/* Play overlay — shown when paused */}
+            {!playing && (
+              <div
+                className="absolute inset-0 flex cursor-pointer flex-col items-center justify-center gap-4 bg-black/50 backdrop-blur-[2px]"
+                onClick={togglePlay}
+              >
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10 shadow-[0_0_40px_rgba(34,211,238,0.3)] backdrop-blur-md transition-transform hover:scale-105">
+                  <Play className="h-6 w-6 translate-x-0.5 text-white" />
+                </div>
+                <p className="text-[12px] font-medium text-white/50">Click to play</p>
+              </div>
+            )}
 
             {/* Controls bar */}
             <div className="absolute bottom-0 inset-x-0 flex items-center justify-between px-4 py-3 opacity-0 transition-opacity group-hover:opacity-100 bg-gradient-to-t from-black/60 to-transparent">

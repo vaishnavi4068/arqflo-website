@@ -38,23 +38,20 @@ export function HeroSection() {
             {/* Eyebrow badge */}
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3.5 py-1 text-[11.5px] font-medium text-white/70 backdrop-blur-sm">
               <span className="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
-              Decision Intelligence for the Built World
+              Structural + MEP Intelligence for the Built World
             </div>
 
             {/* Headline */}
             <h1 className="max-w-4xl text-balance text-[40px] font-semibold leading-[1.06] tracking-tight text-white sm:text-[56px] md:text-[64px]">
-              From concept to construction,{" "}
+              Where structural and MEP knowledge{" "}
               <span className="bg-gradient-to-br from-cyan-200 via-teal-200 to-emerald-300 bg-clip-text text-transparent">
-                with intelligence.
+                work as one.
               </span>
             </h1>
 
             {/* Subheadline */}
             <p className="mt-7 max-w-2xl text-balance text-[15px] leading-relaxed text-white/60 sm:text-[17px]">
-              ArqFlo is the decision-intelligence layer for the built world. AI
-              agents that understand zoning, jurisdiction, and project complexity
-              so your team can move from brief to scheme without the
-              bottleneck.
+              ArqFlo unifies structural and MEP intelligence into a single decision layer. AI agents that reason across disciplines — zoning, code compliance, structural feasibility, and MEP coordination — so your team moves from brief to buildable scheme without the gaps.
             </p>
 
             {/* CTAs */}

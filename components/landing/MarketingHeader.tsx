@@ -27,13 +27,13 @@ export function MarketingHeader() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-5 pt-5">
+      <header className="fixed inset-x-0 top-0 z-[999] flex justify-center bg-[hsl(220_15%_5%)] px-5 pt-5">
         <div
           className={cn(
             "flex w-full max-w-5xl items-center justify-between rounded-full px-6 py-4 transition-all duration-300",
             scrolled
-              ? "border border-white/[0.12] bg-[hsl(220_20%_10%)]/95 shadow-[0_8px_40px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-2xl"
-              : "border border-white/[0.10] bg-[hsl(220_20%_9%)]/85 shadow-[0_4px_30px_rgba(0,0,0,0.35),0_0_0_1px_rgba(255,255,255,0.03)] backdrop-blur-xl"
+              ? "border border-white/[0.12] bg-[#0e1117] shadow-[0_8px_40px_rgba(0,0,0,0.6)]"
+              : "border border-white/[0.10] bg-[#0e1117] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
           )}
         >
           {/* Logo */}
